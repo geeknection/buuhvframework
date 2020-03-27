@@ -1,0 +1,13 @@
+{
+    "name": "geeknection/buuhvframework",
+    "description": "Easily create your PHP applications with BuuhV Framework",
+    "type": "framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Nascimento",
+            "email": "br.dev.jobs@gmail.com"
+        }
+    ],
+    "require": {}
+}
