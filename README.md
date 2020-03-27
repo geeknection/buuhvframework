@@ -1,2 +1,2 @@
 # buuhvframework
-Crie facilmente suas aplicações PHP com o Framework BuuhV
+Easily create your PHP applications with the BuuhV Framework
