@@ -10,5 +10,8 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "geeknection/buuhvframework": "dev-master",
+        "php": ">=7.0.0"
+    }
 }
