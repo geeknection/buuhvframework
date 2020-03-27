@@ -9,5 +9,6 @@
             "email": "br.dev.jobs@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {}
 }
