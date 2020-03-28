@@ -8,7 +8,13 @@ $GLOBALS['config'] = array(
     'path' => __DIR__ . '/..',
     'domain' => 'http://localhost',
     'params' => array(),
-    'not_found' => true
+    'not_found' => true,
+    'database' => array(
+        'host' => 'localhost',
+        'user' => 'root',
+        'pass' => '',
+        'name' => 'framework'
+    )
 );
 
 define('PATH', $GLOBALS['config']['path']);
