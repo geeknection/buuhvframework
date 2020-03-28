@@ -29,4 +29,4 @@ Inside **layout** folder
 How can I import path layout file?
 -
 In your view file use
-"<?php acho App::layout ('**file-path-in-folder**'); ?>"
+"echo App::layout ('**file-path-in-folder**');"
