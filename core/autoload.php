@@ -6,5 +6,6 @@
 require(__DIR__ . '/config.php');
 require(__DIR__ . '/database/index.php');
 require(__DIR__ . '/utils/index.php');
+require(__DIR__ . '/classes/autoload.php');
 require(__DIR__ . '/routes/index.php');
 ?>

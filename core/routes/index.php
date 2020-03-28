@@ -43,6 +43,7 @@ final class Routes {
         {
             $match = true;
             $uri = str_replace(DOMAIN, '', $_SERVER['REQUEST_URI']);
+            $uri = explode('?', $uri)[0];
             $uri_params = explode('/', $uri);
             $params = explode('/', $params);
             if (count($uri_params) !== count($params)) return false;
@@ -79,7 +80,7 @@ final class Routes {
     /**
      * Chama a view
      */
-    public static function get($view)
+    public static function get(string $view)
     {
         $file = PATH . '/app/views/' . $view . '/index.php';
         if (file_exists($file)) 
