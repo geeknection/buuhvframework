@@ -7,6 +7,7 @@ final class App {
 
     function __construct()
     {
+        $this->loadModels();
         $this->loadControllers();
         $this->init();
     }
@@ -15,7 +16,7 @@ final class App {
      * Inicia a aplicação
      * @return void|string
      */
-    public function init()
+    private function init()
     {
         try
         {
@@ -37,6 +38,28 @@ final class App {
         try
         {
             $path   = PATH . '/app/controllers/*';
+            $dirs    = array_filter(glob($path), 'is_dir');
+            foreach ($dirs as $dir)
+            {
+                $file = $dir . '/index.php';
+                if (file_exists($file)) require_once($file);
+            }
+        }
+        catch(Exception $e)
+        {
+            echo $e->getMessage() . PHP_EOL;
+        }
+    }
+    /**
+     * Models da aplicação
+     * @todo - Carregua todas as models da aplicação
+     * @return void
+     */
+    public function loadModels()
+    {
+        try
+        {
+            $path   = PATH . '/app/models/*';
             $dirs    = array_filter(glob($path), 'is_dir');
             foreach ($dirs as $dir)
             {

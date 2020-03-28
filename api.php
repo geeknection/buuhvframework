@@ -45,6 +45,7 @@ if (isset($_GET['c'])) $class = $_GET['c'];
 if (isset($_GET['m'])) $method = $_GET['m'];
 
 try {
+    App::loadModels();
     App::loadControllers();
     $input    = json_decode(file_get_contents("php://input"), TRUE);
     $request  = array_merge($_REQUEST, (array) $input);
