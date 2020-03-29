@@ -78,7 +78,7 @@ final class App {
     public static function layout(string $name = '')
     {
         if (empty($name)) return false;
-        $file = PATH . '/layout' . $name;
+        $file = PATH . '/app/views/layout' . $name;
         if (!file_exists($file)) return false;
 
         return str_replace(PATH, DOMAIN, $file);

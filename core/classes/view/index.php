@@ -25,7 +25,7 @@ final class View {
      */
     public static function build(string $view, Array $params = array())
     {
-        $file = PATH . '/app/views/' . $view . '/index.html';
+        $file = PATH . '/app/views/pages/' . $view . '/index.html';
         if (file_exists($file))
         {
             $html = file_get_contents($file);
@@ -42,10 +42,10 @@ final class View {
      * @todo - Utilize esse método quando quiser carregar componentes para uma view
      * @return string
      */
-    public static function getComponent(string $component, Array $params = array())
+    public static function component(string $component, Array $params = array())
     {
         $html = '';
-        $file = PATH . '/app/views/' . $component . '.html';
+        $file = PATH . '/app/views/components/' . $component . '.html';
         if (file_exists($file))
         {
             $html = file_get_contents($file);
@@ -60,7 +60,7 @@ final class View {
      */
     public static function build404(Array $params = array())
     {
-        $file = PATH . '/app/views/404/index.html';
+        $file = PATH . '/app/views/pages/404/index.html';
         if (file_exists($file))
         {
             $html = file_get_contents($file);
