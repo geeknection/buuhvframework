@@ -9,15 +9,14 @@ final class View {
      * Substitui todas as variáveis do template pelos seus respectivos valores
      * @return string
      */
-    private static function replaceParams(string $content, Array $values)
+    private static function replaceParams(string $content, Array $variables)
     {
         $newContent = $content;
-        if (count($values) > 0) {
-            foreach ($values as $key => $value) {
-                $newContent = preg_replace('/{{' . $key . '}}/', $value, $content);
+        if (count($variables) > 0) {
+            foreach ($variables as $variable => $value) {
+                $newContent = preg_replace('/{{' . $variable . '}}/', $value, $newContent);
             }
         }
-
         return $newContent;
     }
     /**

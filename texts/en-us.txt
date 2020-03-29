@@ -1,1 +1,1 @@
-welcome=Bem-vindo
+page_not_found=Page not found

@@ -14,5 +14,6 @@
  * a aplicação carregará a página 404
  */
 Routes::notFound(array(
-    'css404' => App::layout('/stylesheet/not-found.css')
+    'css404' => App::layout('/stylesheet/not-found.css'),
+    'page_not_found' => Lang::translate('page_not_found')
 ));
