@@ -13,5 +13,10 @@
     "require": {
         "php": "^7.0",
         "curl": ""
+    },
+    "autoload": {
+        "psr-0": {
+            "BuuhVFramework\\": ["src/"]
+        }
     }
 }
