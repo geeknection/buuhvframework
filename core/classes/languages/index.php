@@ -20,6 +20,7 @@ final class Lang {
         self::$lang = $GLOBALS['config']['lang'];
 
         $lang = explode(';', $_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
+        $lang = strtolower(explode(',', $lang)[0]);
         $file = PATH . '/texts/' . $lang . '.txt';
         if (file_exists($file))
         {
