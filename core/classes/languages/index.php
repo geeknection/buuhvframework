@@ -18,7 +18,10 @@ final class Lang {
     private static function identifyLang()
     {
         self::$lang = $GLOBALS['config']['lang'];
-
+        if (empty($_SERVER['HTTP_ACCEPT_LANGUAGE']))
+        {
+            return false;
+        }
         $lang = explode(';', $_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
         $lang = strtolower(explode(',', $lang)[0]);
         $file = PATH . '/texts/' . $lang . '.txt';

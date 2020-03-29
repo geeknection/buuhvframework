@@ -30,7 +30,7 @@ class JWT {
     private static function buildPayload(Array $data)
     {
         $payload = [
-            'iss' => preg_replace('/(http(s)://)?(.*\.)?/', '', DOMAIN),
+            'iss' => str_replace('https://', '', DOMAIN),
         ];
         if ( count($data) > 0 ) {
             foreach ($data as $key => $value) {
@@ -80,11 +80,11 @@ class JWT {
      * Retorna os dados contídos no jwt
      * @return array
      */
-    public static function data(string $payload)
+    public static function data(string $jwt)
     {
-        $payload = json_decode(base64_decode($payload), true);
-        unset($payload['iss']);
-        
+        $explode    = explode(".", $jwt);
+        $payload = json_decode(base64_decode($explode[1]), true);
+                
         return $payload;
     }
     /**
@@ -95,7 +95,7 @@ class JWT {
         try
         {
             $explode    = explode(".", $jwt);
-            if (count($explode) < 3) return array('status' => false, 'message' => 'invalid_access_token');
+            if (count($explode) !== 3) return array('status' => false, 'message' => 'invalid_access_token');
 
             $header     = $explode[0];
             $payload    = $explode[1];
@@ -103,16 +103,16 @@ class JWT {
 
 
             $prev_signature = self::buildSignature($header, $payload);
-           
             if ($prev_signature !== $signature)
             {
                 return array(
                     'status' => false,
-                    'message' => 'access_token_expired'
+                    'message' => 'invalid_access_token'
                 );
             }
             
-            $jwtData = self::data($payload);
+            $jwtData = self::data($jwt);
+
             if (!empty($jwtData['expires']) && $jwtData['expires'] <= time())
             {
                 return array(

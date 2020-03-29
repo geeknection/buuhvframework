@@ -50,6 +50,7 @@ try {
     $input    = json_decode(file_get_contents("php://input"), TRUE);
     $request  = array_merge($_REQUEST, (array) $input);
     $headers  = getallheaders();
+    $request  = array_merge($headers, $request);
 
     $class = ucfirst($class);
     if (class_exists($class))
