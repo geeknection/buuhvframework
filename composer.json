@@ -11,8 +11,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": "^7.0",
-        "curl": "^7.63.0"
+        "php": "^7.0"
     },
     "autoload": {
         "psr-0": {
