@@ -1,5 +1,5 @@
 <?php
-namespace Conn;
+namespace BuuhVConn;
 
 use Exception;
 use PDO;

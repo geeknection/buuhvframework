@@ -1,5 +1,5 @@
 <?php
-namespace Request;
+namespace BuuhVRequest;
 
 use Exception;
 

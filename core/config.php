@@ -9,7 +9,8 @@ $GLOBALS['config'] = array(
     'domain' => 'http://localhost',
     'params' => array(),
     'not_found' => true,
-    'lang' => 'en-us'
+    'lang' => 'en-us',
+    'app_key' => ''
 );
 
 define('PATH', $GLOBALS['config']['path']);

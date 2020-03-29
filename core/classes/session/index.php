@@ -1,5 +1,5 @@
 <?php
-namespace Session;
+namespace BuuhVSession;
 
 use Exception;
 
