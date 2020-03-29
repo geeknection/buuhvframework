@@ -7,11 +7,6 @@
  * 
  */
 
-Routes::set('/', function () {
-    View::build('home', array(
-        'welcome' => Lang::translate('welcome')
-    ));
-});
 
  
 /**
