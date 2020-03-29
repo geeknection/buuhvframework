@@ -13,4 +13,6 @@
  * Sempre que uma url for acessada e não tiver sido definida com o Routes::set
  * a aplicação carregará a página 404
  */
-Routes::notFound();
+Routes::notFound(array(
+    'css404' => App::layout('/stylesheet/not-found.css')
+));
