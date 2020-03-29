@@ -80,7 +80,7 @@ try {
     {
         header("Content-type: application/json");
         echo json_encode(array(
-            'status' => 500,
+            'status' => 400,
             'message' => 'Request failed'
         ), JSON_PRETTY_PRINT);
         exit();
@@ -89,7 +89,7 @@ try {
 catch(Exception $e) {
     header("Content-type: application/json");
     echo json_encode(array(
-        'status' => 500,
+        'status' => 422,
         'message' => $e->getMessage()
     ), JSON_PRETTY_PRINT);
     exit();

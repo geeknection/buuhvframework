@@ -70,6 +70,7 @@ final class Routes {
     }
     /**
      * Retorna o valor de um parâmetro da rota
+     * @return mixed
      */
     public static function getParam(string $param)
     {
@@ -78,37 +79,14 @@ final class Routes {
         return null;
     }
     /**
-     * Chama a view
-     */
-    public static function get(string $view)
-    {
-        $file = PATH . '/app/views/' . $view . '/index.php';
-        if (file_exists($file)) 
-        {
-            require_once($file);
-        }
-        else
-        {
-            $GLOBALS['config']['not_found'] = true;
-        }
-    }
-    /**
      * Caso nenhuma rota seja encontrada carrega a página 404
      * @return void
      */
-    public static function notFound()
+    public static function notFound(Array $params = array())
     {
         if ($GLOBALS['config']['not_found'] === true)
         {
-            $file = PATH . '/app/views/404/index.php';
-            if (file_exists($file))
-            {
-                require_once($file);
-            }
-            else
-            {
-                throw new Exception("Page 404 is required. File not found.");
-            }
+            echo View::build404($params);
         }
     }
 }
