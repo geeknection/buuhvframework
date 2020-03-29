@@ -8,8 +8,7 @@
 date_default_timezone_set('UTC');
 session_start();
 
-require(__DIR__ . '/core/autoload.php');
-require(__DIR__ . '/app.php');
+require(__DIR__ . '/core/__autoload.php');
 
 $allowedOrigins = array('(http(s)://)?(.*\.)?localhost', DOMAIN);
 $origin = NULL;
@@ -45,8 +44,6 @@ if (isset($_GET['c'])) $class = $_GET['c'];
 if (isset($_GET['m'])) $method = $_GET['m'];
 
 try {
-    App::loadModels();
-    App::loadControllers();
     $input    = json_decode(file_get_contents("php://input"), TRUE);
     $request  = array_merge($_REQUEST, (array) $input);
     $headers  = getallheaders();

@@ -1,6 +1,7 @@
 RewriteEngine On
 RewriteBase /
 RewriteBase /app/views/layout
+RewriteRule ^/?\.config$ - [F,L]
 RewriteRule ^index\.php$ - [L] RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

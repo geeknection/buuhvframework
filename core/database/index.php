@@ -10,13 +10,19 @@ use PDOException;
  */
 final class Connection {
     public static $db;
-    private const NAME = 'framework';
-    private const USER = 'root';
+    private const NAME = '';
+    private const USER = '';
     private const PASS = '';
-    private const HOST = 'localhost';
-    private const PORT = '3306';
+    private const HOST = '';
+    private const PORT = '';
 
-    function __construct() {}
+    function __construct() {
+        $this->NAME = $GLOBALS['config']['name'];
+        $this->USER = $GLOBALS['config']['user'];
+        $this->PASS = $GLOBALS['config']['pass'];
+        $this->HOST = $GLOBALS['config']['host'];
+        $this->PORT = $GLOBALS['config']['port'];
+    }
 
     /**
      * Abre uma conexão com o banco de dados

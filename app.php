@@ -7,8 +7,6 @@ final class App {
 
     function __construct()
     {
-        $this->loadModels();
-        $this->loadControllers();
         $this->init();
     }
 
@@ -27,51 +25,6 @@ final class App {
             echo $e->getMessage() . PHP_EOL;
         }
     }
-
-    /**
-     * Controladores da aplicação
-     * @todo - Carregua todos os controladores da aplicação
-     * @return void
-     */
-    public function loadControllers()
-    {
-        try
-        {
-            $path   = PATH . '/app/controllers/*';
-            $dirs    = array_filter(glob($path), 'is_dir');
-            foreach ($dirs as $dir)
-            {
-                $file = $dir . '/index.php';
-                if (file_exists($file)) require_once($file);
-            }
-        }
-        catch(Exception $e)
-        {
-            echo $e->getMessage() . PHP_EOL;
-        }
-    }
-    /**
-     * Models da aplicação
-     * @todo - Carregua todas as models da aplicação
-     * @return void
-     */
-    public function loadModels()
-    {
-        try
-        {
-            $path   = PATH . '/app/models/*';
-            $dirs    = array_filter(glob($path), 'is_dir');
-            foreach ($dirs as $dir)
-            {
-                $file = $dir . '/index.php';
-                if (file_exists($file)) require_once($file);
-            }
-        }
-        catch(Exception $e)
-        {
-            echo $e->getMessage() . PHP_EOL;
-        }
-    }
     /**
      * Retorna o link de um arquivo de layout da aplicação
      */
@@ -84,4 +37,5 @@ final class App {
         return str_replace(PATH, DOMAIN, $file);
     }
 }
+new App();
 ?>
