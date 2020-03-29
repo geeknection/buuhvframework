@@ -38,7 +38,7 @@ final class View {
         }
     }
     /**
-     * Carrega uma componente
+     * Carrega um componente
      * @todo - Utilize esse método quando quiser carregar componentes para uma view
      * @return string
      */
