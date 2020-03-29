@@ -24,7 +24,7 @@ final class AutoloadCore {
      * @return void
      */
     private function loadControlls($className) {
-        $file = __DIR__ . '/controllers/' . mb_strtolower($className) . '/index.php';
+        $file = PATH . '/app/controllers/' . mb_strtolower($className) . '/index.php';
         if (file_exists($file)) require_once($file);
     }
     /**
@@ -32,7 +32,7 @@ final class AutoloadCore {
      * @return void
      */
     private function loadModels($className) {
-        $file = __DIR__ . '/models/' . mb_strtolower($className) . '/index.php';
+        $file = PATH . '/app/models/' . mb_strtolower($className) . '/index.php';
         if (file_exists($file)) require_once($file);
     }
 }
