@@ -70,6 +70,7 @@ final class Routes {
     }
     /**
      * Retorna o valor de um parâmetro da rota
+     * @return mixed
      */
     public static function getParam(string $param)
     {
