@@ -1,8 +1,4 @@
 <?php
-namespace BuuhVSession;
-
-use Exception;
-
 /**
  * Sistema de sessão
  * @todo - Em desenvolvimento
