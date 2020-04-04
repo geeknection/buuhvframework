@@ -43,4 +43,4 @@ class BuuhVJS {
         }
     }
 }
-const BuuhVJS = new BuuhVJS();
+const BuuhV_Js = new BuuhVJS();
