@@ -36,7 +36,7 @@ class BuuhVJS {
     listener(element, event, callback) {
         try {
             let item = document.querySelector(element);
-            item.addEventListener(event, callback);
+            if (item) item.addEventListener(event, callback);
         }
         catch(error) {
             console.error(error.message);
