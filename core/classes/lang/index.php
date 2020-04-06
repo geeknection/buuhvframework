@@ -1,4 +1,5 @@
 <?php
+namespace BuuhV;
 /**
  * Controla o idioma da aplicação
  */

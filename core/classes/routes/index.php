@@ -1,4 +1,8 @@
 <?php
+namespace BuuhV;
+
+use Exception;
+
 /**
  * Controla as rotas do sistema
  */
@@ -65,7 +69,7 @@ final class Routes {
         }
         catch(Exception $e)
         {
-            throw $e;
+            throw new Exception($e->getMessage());
         }
     }
     /**

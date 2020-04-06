@@ -1,4 +1,8 @@
 <?php
+namespace BuuhV;
+
+use Exception;
+
 /**
  * Controla o carregamento da view
  */

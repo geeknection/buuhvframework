@@ -7,8 +7,9 @@
  * 
  */
 
+use BuuhV\Lang;
+use BuuhV\Routes;
 
- 
 /**
  * Sempre que uma url for acessada e não tiver sido definida com o Routes::set
  * a aplicação carregará a página 404

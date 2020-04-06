@@ -1,4 +1,8 @@
 <?php
+namespace BuuhV;
+
+use Exception;
+
 /**
  * Sistema de token
  * @author - Bruno Nascimento

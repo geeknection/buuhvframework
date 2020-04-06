@@ -1,4 +1,8 @@
 <?php
+namespace BuuhV;
+
+use Exception;
+
 /**
  * Classe utilizada para fazer requisições
  */

@@ -2,7 +2,7 @@
 require(__DIR__ . '/utils/index.php');
 require(__DIR__ . '/config.php');
 /**
- * Arquivo que carrega as dependências do framework
+ * File that loads the framework dependencies
  * @author - Bruno Nascimento
  */
 final class AutoloadCore {
@@ -12,27 +12,30 @@ final class AutoloadCore {
         spl_autoload_register(array($this, 'loadModels'));
     }
     /**
-     * Carrega as classes do framework
+     * Load the framework classes
      * @return void
      */
     private function load($className) {
-        $file = __DIR__ . '/classes/' . mb_strtolower($className) . '/index.php';
+        $className = explode('\\', $className);
+        $file = __DIR__ . '/classes/' . mb_strtolower(end($className)) . '/index.php';
         if (file_exists($file)) require_once($file);
     }
     /**
-     * Carrega os controladores da aplicação
+     * Load application controllers
      * @return void
      */
     private function loadControllers($className) {
-        $file = PATH . '/app/controllers/' . mb_strtolower($className) . '/index.php';
+        $className = explode('\\', $className);
+        $file = PATH . '/app/controllers/' . mb_strtolower(end($className)) . '/index.php';
         if (file_exists($file)) require_once($file);
     }
     /**
-     * Carrega as models da aplicação
+     * Load application models
      * @return void
      */
     private function loadModels($className) {
-        $file = PATH . '/app/models/' . mb_strtolower($className) . '/index.php';
+        $className = explode('\\', $className);
+        $file = PATH . '/app/models/' . mb_strtolower(end($className)) . '/index.php';
         if (file_exists($file)) require_once($file);
     }
 }

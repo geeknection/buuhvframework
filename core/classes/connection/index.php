@@ -1,4 +1,10 @@
 <?php
+namespace BuuhV;
+
+use Exception;
+use PDO;
+use PDOException;
+
 /**
  * Classe que controla a conexão com o banco de dados
  */

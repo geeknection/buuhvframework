@@ -1,4 +1,8 @@
 <?php
+namespace BuuhV;
+
+use Exception;
+
 /**
  * Sistema de sessão
  * @todo - Em desenvolvimento
