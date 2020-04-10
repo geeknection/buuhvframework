@@ -1,5 +1,7 @@
 # BuuhV Framework
 
+<a href='https://buuhv.brjnascimento.com'>Documentation</a>
+
 Easily create your PHP applications with the BuuhV Framework
 
 Folders Structure
