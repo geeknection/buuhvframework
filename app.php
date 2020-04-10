@@ -37,5 +37,4 @@ final class App {
         return str_replace(PATH, DOMAIN, $file);
     }
 }
-new App();
 ?>

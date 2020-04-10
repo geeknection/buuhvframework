@@ -9,6 +9,7 @@ date_default_timezone_set('UTC');
 session_start();
 
 require(__DIR__ . '/core/__autoload.php');
+require(__DIR__ . '/app.php');
 
 $allowedOrigins = array('(http(s)://)?(.*\.)?localhost', DOMAIN);
 $origin = NULL;
