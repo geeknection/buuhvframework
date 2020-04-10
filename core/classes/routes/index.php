@@ -27,7 +27,7 @@ final class Routes {
     private static function registerParam(Array $params, int $key, string $param, Array $uri_params)
     {
         preg_match('/\:.*/', $param, $matches, PREG_OFFSET_CAPTURE);
-        if (count($matches) > 0)
+        if (count($matches) > 0 && !empty($uri_params[$key]))
         {
             array_push($GLOBALS['config']['params'], array(
                 'param' => str_replace(':', '', $param),
