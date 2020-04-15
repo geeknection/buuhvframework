@@ -45,6 +45,7 @@ final class Routes {
     {
         try
         {
+            if ($GLOBALS['config']['routeMatched'] === true) return false;
             $match = true;
             $uri = str_replace(DOMAIN, '', $_SERVER['REQUEST_URI']);
             $uri = explode('?', $uri)[0];
@@ -65,6 +66,7 @@ final class Routes {
                 array_push($GLOBALS['config']['routes'], $uri);
                 $GLOBALS['config']['not_found'] = false;
                 $callback();
+                $GLOBALS['config']['routeMatched'] = true;
             }
         }
         catch(Exception $e)

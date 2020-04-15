@@ -7,7 +7,8 @@ $prevConfig = array(
     'routes' => array(),
     'path' => __DIR__ . '/..',
     'params' => array(),
-    'not_found' => true
+    'not_found' => true,
+    'routeMatched' => false
 );
 /**
  * Carrega o arquivo de configuração
