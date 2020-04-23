@@ -1,16 +1,6 @@
 {
-    "name": "geeknection/buuhvframework",
-    "description": "Easily create your PHP applications with BuuhV Framework",
-    "type": "framework",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Bruno Nascimento",
-            "email": "br.dev.jobs@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable",
     "require": {
+        "phpmailer/phpmailer": "^6.1",
         "php": "^7.0"
     }
 }
