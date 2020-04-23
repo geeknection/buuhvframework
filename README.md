@@ -2,7 +2,7 @@
 
 <a href='https://buuhv.brjnascimento.com'>Documentation</a>
 
-**composer require geeknection/buuhvframework
+**composer require geeknection/buuhvframework**
 
 Easily create your PHP applications with the BuuhV Framework
 
