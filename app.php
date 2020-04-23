@@ -1,8 +1,13 @@
 <?php
 /**
- * Renderiza as páginas da aplicação e inicia o framework
- * @author - Bruno Nascimento
+ * BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
  */
+
 final class App {
 
     function __construct()
@@ -11,7 +16,7 @@ final class App {
     }
 
     /**
-     * Inicia a aplicação
+     * Start application
      * @return void|string
      */
     private function init()
@@ -26,7 +31,8 @@ final class App {
         }
     }
     /**
-     * Retorna o link de um arquivo de layout da aplicação
+     * Return layout file path
+     * @return string
      */
     public static function layout(string $name = '')
     {

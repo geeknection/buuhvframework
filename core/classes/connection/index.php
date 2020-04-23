@@ -1,13 +1,19 @@
 <?php
+/**
+ * Database Connecton - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 namespace BuuhV;
 
 use Exception;
 use PDO;
 use PDOException;
 
-/**
- * Classe que controla a conexão com o banco de dados
- */
 final class Connection {
     public static $db;
 

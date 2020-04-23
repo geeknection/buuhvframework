@@ -1,15 +1,20 @@
 <?php
+/**
+ * JWT - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 namespace BuuhV;
 
 use Exception;
 
-/**
- * Sistema de token
- * @author - Bruno Nascimento
- */
 class JWT {
     /**
-     * Contrói o cabeçalho do jwt
+     * header
      * @return string
      */
     private static function buildHeader()
@@ -24,7 +29,7 @@ class JWT {
         return $header;
     }
     /**
-     * Constrói os dados que serão inseridos no jwt para serem usados posteriormente
+     * Content
      * @return string
      */
     private static function buildPayload(Array $data)
@@ -43,7 +48,7 @@ class JWT {
         return $payload;
     }
     /**
-     * Constrói a assinatura do jwt
+     * Credentials
      * @return string
      */
     private static function buildSignature(string $header, string $payload)
@@ -55,7 +60,7 @@ class JWT {
         return $signature;
     }
    /**
-    * Registra o jwt
+    * Build token
     * @return array
     */
     public static function register($data = array())
@@ -77,7 +82,7 @@ class JWT {
         }
     }
     /**
-     * Retorna os dados contídos no jwt
+     * Get token content
      * @return array
      */
     public static function data(string $jwt)
@@ -88,7 +93,7 @@ class JWT {
         return $payload;
     }
     /**
-     * Valida o jwt
+     * Valid token
      * @return array
      */
     public static function valid(string $jwt = '') {

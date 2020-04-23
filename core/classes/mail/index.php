@@ -1,4 +1,13 @@
 <?php
+/**
+ * Mail - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 namespace BuuhV;
 
 require PATH . '/vendor/autoload.php';

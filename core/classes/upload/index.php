@@ -1,11 +1,17 @@
 <?php
+/**
+ * Upload - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 namespace BuuhV;
 
 use Exception;
 
-/**
- * Classe utilizada para fazer upload de arquivos
- */
 class Upload {
     function __construct() {}
     /**
@@ -87,12 +93,9 @@ class Upload {
         {
             self::createDirs();
             $data = self::files($params);
-            $allowed = 'jpg,png,jpeg,gif,mp4,m4v,webm,flv,mov,mpeg,mp3,wav,pdf,docx,ppt,xlsx';
             $new_string        = pathinfo($data['name'], PATHINFO_FILENAME) . '.' . strtolower(pathinfo($data['name'], PATHINFO_EXTENSION));
-            $extension_allowed = explode(',', $allowed);
             $file_extension    = pathinfo($new_string, PATHINFO_EXTENSION);
-            if (!in_array($file_extension, $extension_allowed)) throw new Exception("Upload invalid extension");
-
+            
             $validFolderType = self::validFolderType($file_extension);
             $folder   = $validFolderType['folder'];
             $fileType = $validFolderType['type'];

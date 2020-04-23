@@ -1,7 +1,13 @@
 <?php
 /**
- * Manager crons of server
+ * Crons - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
  */
+
 namespace BuuhV;
 class Crons {
     function __construct() {}

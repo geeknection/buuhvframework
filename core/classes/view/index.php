@@ -1,4 +1,14 @@
 <?php
+/**
+ * View - BuuhV Framework.
+ * PHP Version 7.4.
+ * Controller of view loading
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 namespace BuuhV;
 
 use Exception;

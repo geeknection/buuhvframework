@@ -1,8 +1,13 @@
 <?php
 /**
- * Contém as variáveis globais do sistema
- * @author - Bruno Nascimento
+ * Globals Variables - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
  */
+
 $prevConfig = array(
     'routes' => array(),
     'path' => __DIR__ . '/..',

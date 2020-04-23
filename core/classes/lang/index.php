@@ -1,8 +1,15 @@
 <?php
-namespace BuuhV;
 /**
- * Controla o idioma da aplicação
+ * Lang - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
  */
+
+namespace BuuhV;
+
 final class Lang {
 
     private static $lang = '';
@@ -14,7 +21,8 @@ final class Lang {
     }
 
     /**
-     * Identifica o idioma do usuário
+     * Identify language
+     * @return void
      */
     private static function identifyLang()
     {
@@ -32,7 +40,7 @@ final class Lang {
         }
     }
     /**
-     * Carrega o arquivo de tradução
+     * Load language
      * @return void
      */
     private static function loadDictionary()
@@ -48,7 +56,7 @@ final class Lang {
         }
     }
     /**
-     * Retorna a tradução de um texto
+     * Load text translate
      * @return string
      */
     public static function translate(string $key)

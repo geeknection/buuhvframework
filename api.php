@@ -1,15 +1,20 @@
 <?php
 /**
- * @version 1.0
- * @author - Bruno Nascimento
+ * API - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
  */
+
 @ini_set("memory_limit", "-1");
 @set_time_limit(0);
 date_default_timezone_set('UTC');
 session_start();
-
+require_once(__DIR__ . '/app/tables.php');
 require(__DIR__ . '/core/__autoload.php');
-require(__DIR__ . '/app.php');
+require_once(__DIR__ . '/app.php');
 
 $allowedOrigins = array('(http(s)://)?(.*\.)?localhost', DOMAIN);
 $origin = NULL;
@@ -43,12 +48,17 @@ $class = '';
 $method = '';
 if (isset($_GET['c'])) $class = $_GET['c'];
 if (isset($_GET['m'])) $method = $_GET['m'];
-
+$auth = '';
 try {
     $input    = json_decode(file_get_contents("php://input"), TRUE);
     $request  = array_merge($_REQUEST, (array) $input);
     $headers  = getallheaders();
     $request  = array_merge($headers, $request);
+    if (isset($request['authorization'])) $auth = $request['authorization'];
+    if (isset($request['Authorization'])) $auth = $request['Authorization'];
+    $request['Authorization'] = $auth;
+
+    if (isset($_FILES)) $request  = array_merge($_FILES, $request);
 
     $class = ucfirst($class);
     if (class_exists($class))
@@ -88,7 +98,7 @@ try {
 catch(Exception $e) {
     header("Content-type: application/json");
     echo json_encode(array(
-        'status' => 422,
+        'status' => 500,
         'message' => $e->getMessage()
     ), JSON_PRETTY_PRINT);
     exit();

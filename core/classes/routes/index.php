@@ -1,16 +1,22 @@
 <?php
+/**
+ * Routes - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 namespace BuuhV;
 
 use Exception;
 
-/**
- * Controla as rotas do sistema
- */
 final class Routes {
     function __construct() {}
 
     /**
-     * Adiciona um novo parâmetro às rotas
+     * Set routes param
      * @return void
      */
     public static function setParam(string $param, $value)
@@ -21,7 +27,7 @@ final class Routes {
         ));
     }
     /**
-     * Salva um novo parâmetro às rotas
+     * Register params of set method
      * @return void
      */
     private static function registerParam(Array $params, int $key, string $param, Array $uri_params)
@@ -38,7 +44,7 @@ final class Routes {
         return $params[$key];
     }
     /**
-     * Define uma nova rota
+     * Set new route
      * @return function|catch
      */
     public static function set(string $params = '', $callback)
@@ -75,7 +81,7 @@ final class Routes {
         }
     }
     /**
-     * Retorna o valor de um parâmetro da rota
+     * Get routes param
      * @return mixed
      */
     public static function getParam(string $param)
@@ -85,7 +91,7 @@ final class Routes {
         return null;
     }
     /**
-     * Caso nenhuma rota seja encontrada carrega a página 404
+     * Load page 404 when not found route
      * @return void
      */
     public static function notFound(Array $params = array())

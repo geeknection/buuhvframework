@@ -1,16 +1,23 @@
 <?php
+/**
+ * Requests - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 namespace BuuhV;
 
 use Exception;
 
-/**
- * Classe utilizada para fazer requisições
- */
 final class Request {
     function __construct() {}
 
     /**
-     * Realiza uma requisição
+     * Do request
+     * @return array
      */
     private static function request(string $url, Array $data, Array $headers = array(), bool $post = false, bool $put = false) {
         try
@@ -38,14 +45,16 @@ final class Request {
         }
     }
     /**
-     * Realiza requisição do tipo post
+     * Request type post
+     * @return array
      */
     public static function post(string $url, Array $data, Array $headers = array())
     {
         return self::request($url, $data, $headers, true);
     }
     /**
-     * Realiza requisição do tipo put
+     * Request type put
+     * @return array
      */
     public static function put(string $url, Array $data, Array $headers = array())
     {

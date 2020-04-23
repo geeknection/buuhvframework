@@ -1,16 +1,21 @@
 <?php
+/**
+ * Session - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 namespace BuuhV;
 
 use Exception;
 
-/**
- * Sistema de sessão
- * @todo - Em desenvolvimento
- */
 class Session {
     function __construct() {}
     /**
-     * Registra uma sessão
+     * Set new session
      * @return void
      */
     public static function set(string $name, $value, $expires = false)
@@ -21,7 +26,7 @@ class Session {
         if ($expires === false) setcookie($name, $value, time()+ (60*60*24*364));
     }
     /**
-     * Pega valores de uma sessão
+     * Get session values
      * @return mixed
      */
     public static function get(string $name)
@@ -34,7 +39,7 @@ class Session {
         return false;
     }
     /**
-     * Remove uma sessão
+     * Remove session
      * @return void
      */
     public static function remove(string $name)
