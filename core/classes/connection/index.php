@@ -20,7 +20,8 @@ final class Connection {
     function __construct() {}
 
     /**
-     * Abre uma conexão com o banco de dados
+     * Open database connection
+     * @return connection
      */
     public static function start()
     {
@@ -41,7 +42,8 @@ final class Connection {
     }
     
     /**
-     * Fecha a conexão
+     * Close database connection
+     * @return void
      */
     public static function close()
     {

@@ -1,18 +1,31 @@
 <?php
 /**
- * Cria um novo arquivo
- * @param file - Precisa conter o path e o nome do arquivo
+ * Utils - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
+/**
+ * Create new file
  * @return void
  */
-function createFile($file = '')
+function createFile($file = '', $content = '')
 {
     if (empty($file)) return false;
 
     fopen($file, 'w');
+    $file = $content;
+    fclose($file);
 }
 /**
- * Procura pelo indice de um array
- * @return boolean
+ * Find index as findIndex javascript
+ * @param array $items array
+ * @param string $label to compare
+ * @param string $value to compare
+ * @return number
  */
 function findIndex($items, $label, $value)
 {

@@ -7,14 +7,13 @@
  *
  * @author    Bruno Nascimento (original founder)
  */
-
 namespace BuuhV;
 
 use Exception;
 
 class JWT {
     /**
-     * header
+     * Build Header
      * @return string
      */
     private static function buildHeader()
@@ -29,7 +28,7 @@ class JWT {
         return $header;
     }
     /**
-     * Content
+     * Build Content
      * @return string
      */
     private static function buildPayload(Array $data)
@@ -48,7 +47,7 @@ class JWT {
         return $payload;
     }
     /**
-     * Credentials
+     * Build Credentials
      * @return string
      */
     private static function buildSignature(string $header, string $payload)
@@ -60,8 +59,8 @@ class JWT {
         return $signature;
     }
    /**
-    * Build token
-    * @return array
+    * New token
+    * @return string
     */
     public static function register($data = array())
     {
@@ -82,23 +81,30 @@ class JWT {
         }
     }
     /**
-     * Get token content
+     * Token content
      * @return array
      */
     public static function data(string $jwt)
     {
+        preg_match('/Bearer\s(\S+)/', $jwt, $matches);
+        if (count($matches) > 1) $jwt = $matches[1];
+        
         $explode    = explode(".", $jwt);
         $payload = json_decode(base64_decode($explode[1]), true);
                 
         return $payload;
     }
     /**
-     * Valid token
+     * Valid jwt
      * @return array
      */
     public static function valid(string $jwt = '') {
         try
         {
+            preg_match('/Bearer\s(\S+)/', $jwt, $matches);
+            if (empty($matches[1])) throw new Exception("Invalid access token");
+            $jwt = $matches[1];
+            
             $explode    = explode(".", $jwt);
             if (count($explode) !== 3) return array('status' => false, 'message' => 'invalid_access_token');
 

@@ -16,7 +16,7 @@ $prevConfig = array(
     'routeMatched' => false
 );
 /**
- * Carrega o arquivo de configuração
+ * Load .config variables
  * @return array
  */
 function config()

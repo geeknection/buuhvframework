@@ -1,4 +1,13 @@
 <?php
+/**
+ * Autload - BuuhV Framework.
+ * PHP Version 7.4.
+ *
+ * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
+ *
+ * @author    Bruno Nascimento (original founder)
+ */
+
 require(__DIR__ . '/utils/index.php');
 require(__DIR__ . '/config.php');
 /**

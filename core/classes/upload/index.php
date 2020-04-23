@@ -109,5 +109,25 @@ class Upload {
             throw new Exception("Failed to upload: " . $e->getMessage());
         }
     }
+    /**
+     * Unlink file
+     * @return boolean
+     */
+    public static function unlink(string $path)
+    {
+        try
+        {
+            if (empty($path)) throw new Exception("File is empty");
+            if (file_exists($path)) {
+                @unlink($path);
+                return true;
+            }
+            return false;
+        }
+        catch(Exception $e)
+        {
+            throw new Exception("Failed to remove file: " . $e->getMessage());
+        }
+    }
 }
 ?>

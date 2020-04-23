@@ -2,7 +2,6 @@
 /**
  * View - BuuhV Framework.
  * PHP Version 7.4.
- * Controller of view loading
  *
  * @see https://github.com/geeknection/buuhvframework The BuuhVFramework GitHub project
  *
@@ -13,14 +12,11 @@ namespace BuuhV;
 
 use Exception;
 
-/**
- * Controla o carregamento da view
- */
 final class View {
     function __construct() {}
 
     /**
-     * Substitui todas as variáveis do template pelos seus respectivos valores
+     * Replace variables of html template for variables value
      * @return string
      */
     private static function replaceParams(string $content, Array $variables)
@@ -34,7 +30,7 @@ final class View {
         return $newContent;
     }
     /**
-     * Carrega a view
+     * Load view
      * @return void
      */
     public static function build(string $view, Array $params = array())
@@ -52,8 +48,7 @@ final class View {
         }
     }
     /**
-     * Carrega um componente
-     * @todo - Utilize esse método quando quiser carregar componentes para uma view
+     * Load html template component
      * @return string
      */
     public static function component(string $component, Array $params = array())
@@ -69,7 +64,7 @@ final class View {
         return $html;
     }
     /**
-     * Carrega a página 404
+     * Load Not Found page
      * @return void
      */
     public static function build404(Array $params = array())
