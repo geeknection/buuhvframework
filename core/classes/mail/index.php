@@ -1,4 +1,6 @@
 <?php
+namespace BuuhV;
+
 require PATH . '/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -85,3 +87,4 @@ final class Mail {
         }
     }
 }
+?>
